@@ -51,4 +51,4 @@ Este portfólio foi criado para apresentar não apenas os projetos que desenvolv
 Acredito que um bom produto vai muito além do código. Arquitetura, desempenho, escalabilidade, experiência do usuário e manutenção são partes igualmente importantes do desenvolvimento.
 
 ⚠️ Este projeto foi desenvolvido com auxílio de Inteligência Artificial.
-Entenda a abordagem e o processo de desenvolvimento: [link para o postPost](https://linkedin.com/in/mayckgomes)
+Entenda a abordagem e o processo de desenvolvimento: [link para o post](https://linkedin.com/in/mayckgomes)
