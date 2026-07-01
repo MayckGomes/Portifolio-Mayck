@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mayck Gomes — Mobile & Backend Developer</title>
+<meta name="description" content="Portfólio de Mayck Gomes, desenvolvedor Mobile e Backend especializado em Kotlin, Android e Kotlin Multiplatform.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- linha de progresso de scroll -->
+<div class="scroll-bar" id="scrollBar"></div>
+
+<header class="header" id="header">
+  <div class="header__inner">
+    <a href="#topo" class="header__logo">MG<span class="dot">.</span></a>
+    <nav class="header__nav">
+      <a href="#sobre">Sobre</a>
+      <a href="#stack">Stack</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato" class="header__cta">Contato</a>
+    </nav>
+    <button class="header__burger" id="burger" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="header__mobile" id="mobileNav">
+    <a href="#sobre">Sobre</a>
+    <a href="#stack">Stack</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="topo">
+    <div class="hero__grid" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <p class="eyebrow" id="heroStatus"><span class="eyebrow__dot"></span><span id="heroStatusText"></span></p>
+      <h1 class="hero__title">
+        <span id="heroNome">Nome</span>
+        <span class="hero__cargo" id="heroCargo">Cargo</span>
+      </h1>
+      <p class="hero__frase" id="heroFrase"></p>
+      <div class="hero__meta">
+        <span id="heroLocal"></span>
+      </div>
+      <div class="hero__actions">
+        <a href="#projetos" class="btn btn--primary">Ver projetos</a>
+        <a href="#contato" class="btn btn--ghost">Falar comigo</a>
+      </div>
+    </div>
+    <svg class="hero__telemetry" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+      <polyline id="telemetryLine" points="0,80 100,80 140,20 180,95 220,45 260,80 320,80 360,10 400,80 460,80 500,55 540,80 600,80 640,25 680,80 740,80 780,60 820,80 900,80 940,15 980,80 1040,80 1080,50 1120,80 1200,80" />
+    </svg>
+  </section>
+
+  <!-- ===================== SOBRE ===================== -->
+  <section class="section" id="sobre">
+    <div class="section__inner">
+      <div class="section__head">
+        <span class="section__tag">01 — Piloto</span>
+        <h2 class="section__title">Sobre mim</h2>
+      </div>
+      <div class="sobre__content">
+        <div class="sobre__texto" id="sobreParagrafos"></div>
+        <div class="sobre__destaques" id="sobreDestaques"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STACK ===================== -->
+  <section class="section section--alt" id="stack">
+    <div class="section__inner">
+      <div class="section__head">
+        <span class="section__tag">02 — Setup</span>
+        <h2 class="section__title">Stack</h2>
+      </div>
+      <div class="stack__grid" id="stackGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===================== PROJETOS ===================== -->
+  <section class="section" id="projetos">
+    <div class="section__inner">
+      <div class="section__head">
+        <span class="section__tag">03 — Garagem</span>
+        <h2 class="section__title">Projetos</h2>
+      </div>
+      <div class="projetos__grid" id="projetosGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTATO ===================== -->
+  <section class="section section--contato" id="contato">
+    <div class="section__inner">
+      <div class="section__head">
+        <span class="section__tag">04 — Box</span>
+        <h2 class="section__title">Contato</h2>
+      </div>
+      <p class="contato__frase" id="contatoFrase"></p>
+      <a class="contato__email" id="contatoEmail" href="#"></a>
+      <div class="contato__links" id="contatoLinks"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <span id="footerNome"></span>
+    <span class="footer__ano">© <span id="footerAno"></span></span>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
