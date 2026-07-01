@@ -49,3 +49,7 @@ Tenho como foco o desenvolvimento utilizando Kotlin, Android e Kotlin Multiplatf
 Este portfólio foi criado para apresentar não apenas os projetos que desenvolvi, mas também minha forma de pensar como engenheiro de software.
 
 Acredito que um bom produto vai muito além do código. Arquitetura, desempenho, escalabilidade, experiência do usuário e manutenção são partes igualmente importantes do desenvolvimento.
+
+## ⚠️ Atenção, esse site foi gerado por inteligência artificial ⚠️
+
+Veja mais sobre: [Post](https://linkedin.com/in/mayckgomes)
