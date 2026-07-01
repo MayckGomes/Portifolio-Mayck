@@ -147,24 +147,56 @@
 
   /* -------------------- SCROLL REVEAL -------------------- */
   function initReveal() {
-    const targets = document.querySelectorAll(
-      ".sobre__content, .stack__card, .card-projeto, .contato__frase"
-    );
-    targets.forEach((el) => el.classList.add("reveal"));
+    // Cada grupo revela em sequência (stagger) quando entra na tela.
+    // O primeiro seletor de cada grupo é o "gatilho" observado;
+    // todos os elementos do grupo recebem o delay escalonado.
+    const grupos = [
+      ".hero__inner .eyebrow, .hero__inner .hero__title, .hero__inner .hero__frase, .hero__inner .hero__meta, .hero__inner .hero__actions",
+      "#sobre .section__tag, #sobre .section__title",
+      "#sobre .sobre__texto p, #sobre .sobre__destaque",
+      "#stack .section__tag, #stack .section__title",
+      "#stack .stack__card",
+      "#projetos .section__tag, #projetos .section__title",
+      "#projetos .card-projeto",
+      "#contato .section__tag, #contato .section__title, #contato .contato__frase, #contato .contato__email, #contato .contato__links",
+    ];
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
+    const STAGGER_MS = 90;
 
-    targets.forEach((el) => observer.observe(el));
+    grupos.forEach((seletor) => {
+      const els = document.querySelectorAll(seletor);
+      if (!els.length) return;
+
+      els.forEach((el, i) => {
+        el.classList.add("reveal");
+        el.style.transitionDelay = `${i * STAGGER_MS}ms`;
+      });
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              els.forEach((el) => el.classList.add("is-visible"));
+              observer.disconnect();
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+
+      // observa o primeiro elemento do grupo como gatilho
+      observer.observe(els[0]);
+    });
+
+    // Hero já está visível ao carregar a página — revela de imediato,
+    // sem depender de scroll.
+    requestAnimationFrame(() => {
+      document
+        .querySelectorAll(
+          ".hero__inner .eyebrow, .hero__inner .hero__title, .hero__inner .hero__frase, .hero__inner .hero__meta, .hero__inner .hero__actions"
+        )
+        .forEach((el) => el.classList.add("is-visible"));
+    });
   }
 
   /* -------------------- INIT -------------------- */
