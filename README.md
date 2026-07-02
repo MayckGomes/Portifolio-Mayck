@@ -6,6 +6,12 @@ Este projeto representa um pouco da minha trajetória como desenvolvedor Mobile 
 
 A identidade visual foi inspirada na engenharia da Fórmula 1, utilizando conceitos como telemetria, grid, garagem e box para transmitir aquilo que mais valorizo no desenvolvimento de software: performance, precisão e evolução contínua.
 
+### ⚠️ Este projeto foi desenvolvido com auxílio de Inteligência Artificial.
+
+Entenda a abordagem e o processo de desenvolvimento: [link para o post](https://www.linkedin.com/posts/mayckgomes_ai-artificialintelligence-vibecoding-share-7478129317172985856-m8b2/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEKA6lwB30NVwzp-2SuS745oAGgz9tmxXPQ)
+
+---
+
 ## 🚀 Sobre mim
 
 Sou desenvolvedor Mobile e Backend, apaixonado por transformar ideias em produtos completos.
@@ -49,6 +55,3 @@ Tenho como foco o desenvolvimento utilizando Kotlin, Android e Kotlin Multiplatf
 Este portfólio foi criado para apresentar não apenas os projetos que desenvolvi, mas também minha forma de pensar como engenheiro de software.
 
 Acredito que um bom produto vai muito além do código. Arquitetura, desempenho, escalabilidade, experiência do usuário e manutenção são partes igualmente importantes do desenvolvimento.
-
-⚠️ Este projeto foi desenvolvido com auxílio de Inteligência Artificial.
-Entenda a abordagem e o processo de desenvolvimento: [link para o post](https://linkedin.com/in/mayckgomes)
