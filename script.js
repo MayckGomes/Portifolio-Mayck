@@ -151,19 +151,10 @@
 
   /* -------------------- HEADER: hide on scroll down -------------------- */
   function initHeaderScroll() {
-    const header = document.getElementById("header");
     const scrollBar = document.getElementById("scrollBar");
-    let lastY = window.scrollY;
 
     window.addEventListener("scroll", () => {
       const y = window.scrollY;
-
-      if (y > lastY && y > 140) {
-        header.classList.add("header--hidden");
-      } else {
-        header.classList.remove("header--hidden");
-      }
-      lastY = y;
 
       const height = document.documentElement.scrollHeight - window.innerHeight;
       const progress = height > 0 ? (y / height) * 100 : 0;

@@ -106,15 +106,23 @@ button { font: inherit; cursor: pointer; background: none; border: none; color: 
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 500;
-  background: rgba(10, 14, 18, 0.72);
+  background: linear-gradient(180deg, rgba(10, 14, 18, 0.94), rgba(10, 14, 18, 0.78));
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--c-line);
   transition: transform 0.4s var(--ease);
 }
 .header.header--hidden { transform: translateY(-100%); }
+.header::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -1px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--c-teal), transparent);
+  opacity: 0.45;
+}
 
 .header__inner {
-  height: 72px;
+  height: 78px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -132,27 +140,29 @@ button { font: inherit; cursor: pointer; background: none; border: none; color: 
 .header__nav {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 3px;
+  padding: 4px;
+  border: 1px solid var(--c-line);
+  background: rgba(20, 26, 33, 0.55);
   font-size: 14px;
   font-weight: 500;
   color: var(--c-silver);
 }
-.header__nav a { position: relative; padding: 4px 0; transition: color 0.25s; }
-.header__nav a:not(.header__cta):hover { color: var(--c-white); }
-.header__nav a:not(.header__cta)::after {
-  content: "";
-  position: absolute;
-  left: 0; bottom: -2px;
-  width: 0; height: 1px;
-  background: var(--c-teal);
-  transition: width 0.25s var(--ease);
+.header__nav a {
+  position: relative;
+  padding: 8px 12px;
+  letter-spacing: 0.02em;
+  transition: color 0.25s, background 0.25s;
 }
-.header__nav a:not(.header__cta):hover::after { width: 100%; }
+.header__nav a:not(.header__cta):hover {
+  color: var(--c-white);
+  background: rgba(0, 161, 155, 0.1);
+}
 
 .header__cta {
   border: 1px solid var(--c-teal);
   color: var(--c-teal) !important;
-  padding: 8px 16px;
+  padding: 8px 14px !important;
   border-radius: var(--radius);
   transition: background 0.25s, color 0.25s;
 }
@@ -165,6 +175,7 @@ button { font: inherit; cursor: pointer; background: none; border: none; color: 
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.08em;
+  margin-left: 4px;
   transition: color 0.25s, border-color 0.25s;
 }
 .language-toggle:hover { color: var(--c-teal); border-color: var(--c-teal); }
