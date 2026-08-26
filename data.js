@@ -41,15 +41,31 @@ const PORTFOLIO_DATA = {
         descricao: "API backend do DatePlan hospedada em VPS OCI ARM, desenvolvida em Java utilizando o Spring Framework, autenticação JWT de dois tokens e rate limiting em NGINX.",
         tags: ["Spring Boot", "Java 21", "Redis", "NGINX", "CI/CD"],
         link: "https://github.com/MayckGomes/dateplan-api-v2",
-        linkRotulo: "Ver repositório",
+        linkRotulo: "Ver no GitHub",
         destaque: true
+      },
+      {
+        titulo: "MatchSkills",
+        descricao: "Plataforma de recrutamento e seleção que gera um match entre candidatos e vagas a partir da análise de hard skills e soft skills. A avaliação de soft skills usa um chatbot com IA baseado no método BARS para gerar relatórios estruturados.",
+        tags: ["Java", "Spring Boot", "Microsserviços", "PostgreSQL", "MongoDB", "Supabase", "IA"],
+        link: "https://github.com/MatchSkills",
+        linkRotulo: "Ver no GitHub",
+        destaque: false
+      },
+      {
+        titulo: "OxeSchool",
+        descricao: "Plataforma de cursos desenvolvida como projeto final do curso de Engenharia de Software Moderna da OxeTech Academy, em equipe com desenvolvedores, POs e QAs.",
+        tags: ["Java", "Spring Boot", "MongoDB", "PostgreSQL", "Backend", "Trabalho em equipe"],
+        link: "https://github.com/OxeSchool",
+        linkRotulo: "Ver no GitHub",
+        destaque: false
       },
       {
         titulo: "Racetime App",
         descricao: "App para fãs de Fórmula 1 acompanharem resultados de classificação, a corrida do último fim de semana e a classificação de equipes e pilotos em tempo real, com opção de favoritar seus pilotos e equipes preferidos.",
         tags: ["Kotlin", "Jetpack Compose", "Ktor", "Traduções"],
         link: "https://github.com/MayckGomes/Racetimeapp",
-        linkRotulo: "Ver repositório",
+        linkRotulo: "Ver no GitHub",
         destaque: false
       },
       {
@@ -57,7 +73,7 @@ const PORTFOLIO_DATA = {
         descricao: "App para gerenciamento de treinos de academia, com acompanhamento de frequência, último treino, média de tempo e muito mais.",
         tags: ["Kotlin", "Jetpack Compose", "Room"],
         link: "https://github.com/MayckGomes/Project-gym",
-        linkRotulo: "Ver repositório",
+        linkRotulo: "Ver no GitHub",
         destaque: false
       }
     ],
@@ -113,15 +129,31 @@ const PORTFOLIO_DATA = {
         descricao: "DatePlan's backend API hosted on an OCI ARM VPS, built in Java with the Spring Framework, two-token JWT authentication and NGINX rate limiting.",
         tags: ["Spring Boot", "Java 21", "Redis", "NGINX", "CI/CD"],
         link: "https://github.com/MayckGomes/dateplan-api-v2",
-        linkRotulo: "View repository",
+        linkRotulo: "View on GitHub",
         destaque: true
+      },
+      {
+        titulo: "MatchSkills",
+        descricao: "A recruitment and selection platform that matches candidates with job openings by analyzing hard and soft skills. Its soft skills assessment uses an AI-powered chatbot based on BARS to generate structured reports.",
+        tags: ["Java", "Spring Boot", "Microservices", "PostgreSQL", "MongoDB", "Supabase", "AI"],
+        link: "https://github.com/MatchSkills",
+        linkRotulo: "View on GitHub",
+        destaque: false
+      },
+      {
+        titulo: "OxeSchool",
+        descricao: "A course platform developed as the final project for OxeTech Academy's Modern Software Engineering course, built collaboratively by developers, POs and QAs.",
+        tags: ["Java", "Spring Boot", "MongoDB", "PostgreSQL", "Backend", "Teamwork"],
+        link: "https://github.com/OxeSchool",
+        linkRotulo: "View on GitHub",
+        destaque: false
       },
       {
         titulo: "Racetime App",
         descricao: "An app for Formula 1 fans to follow qualifying results, last weekend's race and team and driver standings in real time, with the option to favorite their favorite drivers and teams.",
         tags: ["Kotlin", "Jetpack Compose", "Ktor", "Translations"],
         link: "https://github.com/MayckGomes/Racetimeapp",
-        linkRotulo: "View repository",
+        linkRotulo: "View on GitHub",
         destaque: false
       },
       {
@@ -129,7 +161,7 @@ const PORTFOLIO_DATA = {
         descricao: "A workout management app with tracking for frequency, latest workout, average duration and much more.",
         tags: ["Kotlin", "Jetpack Compose", "Room"],
         link: "https://github.com/MayckGomes/Project-gym",
-        linkRotulo: "View repository",
+        linkRotulo: "View on GitHub",
         destaque: false
       }
     ],
