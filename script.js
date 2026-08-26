@@ -109,6 +109,14 @@
       const value = element.dataset.i18n.split(".").reduce((object, key) => object[key], T);
       if (value) element.textContent = value;
     });
+    document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+      const value = element.dataset.i18nAriaLabel.split(".").reduce((object, key) => object[key], T);
+      if (value) element.setAttribute("aria-label", value);
+    });
+    document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+      const value = element.dataset.i18nAlt.split(".").reduce((object, key) => object[key], T);
+      if (value) element.alt = value;
+    });
 
     const nextLanguage = currentLanguage === "pt" ? "en" : "pt";
     document.querySelectorAll(".language-toggle").forEach((button) => {
@@ -141,6 +149,17 @@
         initReveal();
       });
     });
+  }
+
+  function initProfilePhoto() {
+    const photo = document.getElementById("profilePhoto");
+    const portrait = document.querySelector(".hero__portrait");
+
+    photo.addEventListener("load", () => portrait.classList.add("has-image"));
+    photo.addEventListener("error", () => portrait.classList.remove("has-image"));
+    if (photo.complete && photo.naturalWidth > 0) {
+      portrait.classList.add("has-image");
+    }
   }
 
   /* -------------------- FOOTER -------------------- */
@@ -240,6 +259,7 @@
     initHeaderScroll();
     initMobileMenu();
     initLanguageToggle();
+    initProfilePhoto();
     initReveal();
   }
 

@@ -33,7 +33,7 @@
       <a href="#contato" class="header__cta" data-i18n="nav.contact">Contato</a>
       <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch to English" title="Switch to English">EN</button>
     </nav>
-    <button class="header__burger" id="burger" aria-label="Abrir menu" data-i18n-aria-label="menu.open">
+    <button class="header__burger" id="burger" aria-label="Abrir menu">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -52,18 +52,25 @@
   <section class="hero" id="topo">
     <div class="hero__grid" aria-hidden="true"></div>
     <div class="hero__inner">
-      <p class="eyebrow" id="heroStatus"><span class="eyebrow__dot"></span><span id="heroStatusText"></span></p>
-      <h1 class="hero__title">
-        <span id="heroNome">Nome</span>
-        <span class="hero__cargo" id="heroCargo">Cargo</span>
-      </h1>
-      <p class="hero__frase" id="heroFrase"></p>
-      <div class="hero__meta">
-        <span id="heroLocal"></span>
+      <div class="hero__copy">
+        <p class="eyebrow" id="heroStatus"><span class="eyebrow__dot"></span><span id="heroStatusText"></span></p>
+        <h1 class="hero__title">
+          <span id="heroNome">Nome</span>
+          <span class="hero__cargo" id="heroCargo">Cargo</span>
+        </h1>
+        <p class="hero__frase" id="heroFrase"></p>
+        <div class="hero__meta">
+          <span id="heroLocal"></span>
+        </div>
+        <div class="hero__actions">
+          <a href="#projetos" class="btn btn--primary" data-i18n="hero.projects">Ver projetos</a>
+          <a href="#contato" class="btn btn--ghost" data-i18n="hero.contact">Falar comigo</a>
+        </div>
       </div>
-      <div class="hero__actions">
-        <a href="#projetos" class="btn btn--primary" data-i18n="hero.projects">Ver projetos</a>
-        <a href="#contato" class="btn btn--ghost" data-i18n="hero.contact">Falar comigo</a>
+      <div class="hero__portrait" aria-label="Espaço reservado para foto" data-i18n-aria-label="hero.photoAriaLabel">
+        <img id="profilePhoto" src="foto-perfil.webp" alt="Foto de Mayck Gomes" data-i18n-alt="hero.photoAlt">
+        <span class="hero__portrait-mark">MG<span class="dot">.</span></span>
+        <span class="hero__portrait-label" data-i18n="hero.photoPlaceholder">Espaço para sua foto</span>
       </div>
     </div>
     <svg class="hero__telemetry" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">

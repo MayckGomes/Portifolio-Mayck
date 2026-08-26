@@ -149,7 +149,7 @@ const PORTFOLIO_DATA = {
 const PORTFOLIO_UI = {
   pt: {
     nav: { about: "Sobre", stack: "Stack", projects: "Projetos", contact: "Contato" },
-    hero: { projects: "Ver projetos", contact: "Falar comigo" },
+    hero: { projects: "Ver projetos", contact: "Falar comigo", photoPlaceholder: "Espaço para sua foto", photoAriaLabel: "Espaço reservado para foto", photoAlt: "Foto de Mayck Gomes" },
     sections: { aboutTag: "01 — Piloto", about: "Sobre mim", stackTag: "02 — Setup", stack: "Stack", projectsTag: "03 — Garagem", projects: "Projetos", contactTag: "04 — Box", contact: "Contato" },
     statusAvailable: "Disponível para novos projetos",
     statusBusy: "Focado em projetos atuais",
@@ -161,7 +161,7 @@ const PORTFOLIO_UI = {
   },
   en: {
     nav: { about: "About", stack: "Stack", projects: "Projects", contact: "Contact" },
-    hero: { projects: "View projects", contact: "Get in touch" },
+    hero: { projects: "View projects", contact: "Get in touch", photoPlaceholder: "Your photo goes here", photoAriaLabel: "Reserved space for a profile photo", photoAlt: "Photo of Mayck Gomes" },
     sections: { aboutTag: "01 — Driver", about: "About me", stackTag: "02 — Setup", stack: "Stack", projectsTag: "03 — Garage", projects: "Projects", contactTag: "04 — Pit box", contact: "Contact" },
     statusAvailable: "Available for new projects",
     statusBusy: "Focused on current projects",
