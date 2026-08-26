@@ -158,6 +158,17 @@ button { font: inherit; cursor: pointer; background: none; border: none; color: 
 }
 .header__cta:hover { background: var(--c-teal); color: var(--c-black) !important; }
 
+.language-toggle {
+  border: 1px solid var(--c-line);
+  color: var(--c-silver);
+  padding: 7px 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  transition: color 0.25s, border-color 0.25s;
+}
+.language-toggle:hover { color: var(--c-teal); border-color: var(--c-teal); }
+
 .header__burger {
   display: none;
   flex-direction: column;
@@ -189,6 +200,10 @@ button { font: inherit; cursor: pointer; background: none; border: none; color: 
   border-bottom: 1px solid var(--c-line);
   font-size: 15px;
   font-weight: 500;
+}
+.language-toggle--mobile {
+  align-self: flex-start;
+  margin: 14px 28px;
 }
 
 /* ==========================================================================

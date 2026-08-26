@@ -5,12 +5,14 @@
    ========================================================================== */
 
 (function () {
-  const D = PORTFOLIO_DATA;
+  const STORAGE_KEY = "portfolio-language";
+  const savedLanguage = localStorage.getItem(STORAGE_KEY);
+  let currentLanguage = savedLanguage === "en" ? "en" : "pt";
 
   const iconArrow = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>`;
 
   /* -------------------- HERO -------------------- */
-  function renderHero() {
+  function renderHero(D, T) {
     document.getElementById("heroNome").textContent = D.identidade.nome;
     document.getElementById("heroCargo").textContent = D.identidade.cargo;
     document.getElementById("heroFrase").textContent = D.identidade.fraseHero;
@@ -18,14 +20,17 @@
 
     const statusText = document.getElementById("heroStatusText");
     statusText.textContent = D.identidade.disponivel
-      ? "Disponível para novos projetos"
-      : "Focado em projetos atuais";
+      ? T.statusAvailable
+      : T.statusBusy;
 
     document.title = `${D.identidade.nome} — ${D.identidade.cargo}`;
+    document.getElementById("metaDescription").content = currentLanguage === "pt"
+      ? "Portfólio de Mayck Gomes, desenvolvedor Mobile e Backend especializado em Kotlin, Android e Kotlin Multiplatform."
+      : "Portfolio of Mayck Gomes, a Mobile and Backend Developer specializing in Kotlin, Android and Kotlin Multiplatform.";
   }
 
   /* -------------------- SOBRE -------------------- */
-  function renderSobre() {
+  function renderSobre(D) {
     const paragrafosEl = document.getElementById("sobreParagrafos");
     paragrafosEl.innerHTML = D.sobre.paragrafos
       .map((p) => `<p>${p}</p>`)
@@ -44,7 +49,7 @@
   }
 
   /* -------------------- STACK -------------------- */
-  function renderStack() {
+  function renderStack(D) {
     const grid = document.getElementById("stackGrid");
     grid.innerHTML = D.stack
       .map(
@@ -60,20 +65,20 @@
   }
 
   /* -------------------- PROJETOS -------------------- */
-  function renderProjetos() {
+  function renderProjetos(D, T) {
     const grid = document.getElementById("projetosGrid");
     grid.innerHTML = D.projetos
       .map((p) => {
         const temLink = p.link && p.link.trim().length > 0;
         const linkHTML = temLink
-          ? `<a class="card-projeto__link" href="${p.link}" target="_blank" rel="noopener">${p.linkRotulo || "Acessar"} ${iconArrow}</a>`
-          : `<span class="card-projeto__link card-projeto__link--disabled">${p.linkRotulo || "Indisponível"}</span>`;
+          ? `<a class="card-projeto__link" href="${p.link}" target="_blank" rel="noopener">${p.linkRotulo || T.access} ${iconArrow}</a>`
+          : `<span class="card-projeto__link card-projeto__link--disabled">${p.linkRotulo || T.unavailable}</span>`;
 
         return `
         <article class="card-projeto reveal">
           <div class="card-projeto__top">
             <h3 class="card-projeto__titulo">${p.titulo}</h3>
-            ${p.destaque ? `<span class="card-projeto__badge">Em produção</span>` : ""}
+            ${p.destaque ? `<span class="card-projeto__badge">${T.production}</span>` : ""}
           </div>
           <p class="card-projeto__desc">${p.descricao}</p>
           <div class="card-projeto__tags">
@@ -86,7 +91,7 @@
   }
 
   /* -------------------- CONTATO -------------------- */
-  function renderContato() {
+  function renderContato(D) {
     document.getElementById("contatoFrase").textContent = D.contato.frase;
 
     const emailEl = document.getElementById("contatoEmail");
@@ -99,8 +104,47 @@
       .join("");
   }
 
+  function renderInterface(T) {
+    document.querySelectorAll("[data-i18n]").forEach((element) => {
+      const value = element.dataset.i18n.split(".").reduce((object, key) => object[key], T);
+      if (value) element.textContent = value;
+    });
+
+    const nextLanguage = currentLanguage === "pt" ? "en" : "pt";
+    document.querySelectorAll(".language-toggle").forEach((button) => {
+      button.textContent = nextLanguage.toUpperCase();
+      button.setAttribute("aria-label", T.switchLabel);
+      button.title = T.switchLabel;
+    });
+    document.getElementById("burger").setAttribute("aria-label", T.menuOpen);
+    document.documentElement.lang = currentLanguage === "pt" ? "pt-BR" : "en";
+  }
+
+  function render() {
+    const D = PORTFOLIO_DATA[currentLanguage];
+    const T = PORTFOLIO_UI[currentLanguage];
+    renderInterface(T);
+    renderHero(D, T);
+    renderSobre(D);
+    renderStack(D);
+    renderProjetos(D, T);
+    renderContato(D);
+    renderFooter(D);
+  }
+
+  function initLanguageToggle() {
+    document.querySelectorAll(".language-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        currentLanguage = currentLanguage === "pt" ? "en" : "pt";
+        localStorage.setItem(STORAGE_KEY, currentLanguage);
+        render();
+        initReveal();
+      });
+    });
+  }
+
   /* -------------------- FOOTER -------------------- */
-  function renderFooter() {
+  function renderFooter(D) {
     document.getElementById("footerNome").textContent = D.identidade.nome;
     document.getElementById("footerAno").textContent = new Date().getFullYear();
   }
@@ -201,14 +245,10 @@
 
   /* -------------------- INIT -------------------- */
   function init() {
-    renderHero();
-    renderSobre();
-    renderStack();
-    renderProjetos();
-    renderContato();
-    renderFooter();
+    render();
     initHeaderScroll();
     initMobileMenu();
+    initLanguageToggle();
     initReveal();
   }
 

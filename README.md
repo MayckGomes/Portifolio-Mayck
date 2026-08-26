@@ -6,6 +6,8 @@ Este projeto representa um pouco da minha trajetória como desenvolvedor Mobile 
 
 A identidade visual foi inspirada na engenharia da Fórmula 1, utilizando conceitos como telemetria, grid, garagem e box para transmitir aquilo que mais valorizo no desenvolvimento de software: performance, precisão e evolução contínua.
 
+O portfólio está disponível em português e inglês. Use o botão de idioma no cabeçalho para alternar entre as versões; a preferência fica salva no navegador.
+
 ### ⚠️ Este projeto foi desenvolvido com auxílio de Inteligência Artificial.
 
 Entenda a abordagem e o processo de desenvolvimento: [link para o post](https://www.linkedin.com/posts/mayckgomes_ai-artificialintelligence-vibecoding-share-7478129317172985856-m8b2/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEKA6lwB30NVwzp-2SuS745oAGgz9tmxXPQ)
